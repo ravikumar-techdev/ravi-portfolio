@@ -9,10 +9,26 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { background: linear-gradient(135deg, #020617, #0f172a); color: #e5e7eb; scroll-behavior: smooth; }
     header { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; animation: fadeIn 1.5s ease; }
-    header h1 { font-size: 3.2rem; color: #38bdf8; }
-    header p { margin: 15px auto; max-width: 650px; }
+    header h1 {
+  font-size: 3.5rem;
+  color: #38bdf8;
+  animation: glow 2.5s infinite alternate;
+}
+
+    header p {
+  margin: 15px auto;
+  max-width: 650px;
+  opacity: 0;
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 0.6s;
+}
+
     .btn { display: inline-block; margin: 10px; padding: 12px 28px; background: #38bdf8; color: #020617; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.3s; }
-    .btn:hover { transform: scale(1.08); }
+    .btn:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+}
+
     section { padding: 80px 10%; }
     h2 { color: #38bdf8; margin-bottom: 25px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
@@ -21,6 +37,26 @@
     img { width: 100%; border-radius: 12px; cursor: pointer; }
     footer { text-align: center; padding: 25px; background: #020617; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #38bdf8;
+  }
+  to {
+    text-shadow: 0 0 25px #38bdf8;
+  }
+}
+
   </style>
 </head>
 <body>
